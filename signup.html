@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign Up - MovieGuide</title>
+    <link rel="icon" href="./img/logo.ico">
+
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">MovieGuide</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Search Movies</a></li>
+            <li><a href="trending.html">Trending Now</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="login.html">Log In</a></li>
+        </ul>
+    </nav>
+
+    <div class="centered-container" style="text-align: center;">
+        <h2 style="margin-bottom: 2rem; color: #ffb92a;">Create Account</h2>
+
+        <input type="text" id="fullname" class="signup-input" placeholder="Full Name">
+        <input type="email" id="email" class="signup-input" placeholder="Email Address">
+        <input type="password" id="password" class="signup-input" placeholder="Create Password">
+
+        <button id="signup-btn" class="signup-btn">Sign Up</button>
+        <p id="error-msg" class="error-msg">Please fill in all fields</p>
+
+        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #a0a0a0;">
+            Already have an account? <a href="login.html"
+                style="color: #ffb92a; cursor: pointer; text-decoration: none;">Log In</a>
+        </p>
+    </div>
+
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
