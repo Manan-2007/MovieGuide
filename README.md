@@ -115,8 +115,8 @@ Profile cards for the team members — name, role, and a short bio.
 
 | | Name | Role |
 |---|---|---|
-| 🧑‍💻 | **Arshpreet Kaur** | Lead Developer — built the core search engine and app architecture |
-| 🎨 | **Pratishtha Bhatia** | UI/UX Designer — crafted the visual design and user experience |
+| 🧑‍💻 | **Pratishtha Bhatia** | Lead Developer — built the core search engine and app architecture |
+| 🎨 | **Arshpreet Kaur** | UI/UX Designer — crafted the visual design and user experience |
 
 ---
 
