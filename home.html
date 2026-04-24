@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="MovieGuide — Your ultimate destination to search, discover, and explore movies with ratings, cast, and detailed reviews.">
+    <link rel="stylesheet" href="style.css">
+    <title>MovieGuide — Discover Movies You'll Love</title>
+    <link rel="icon" href="./img/logo.ico">
+</head>
+
+<body class="home-body">
+
+    <nav>
+        <a href="home.html" class="logo">MovieGuide</a>
+        <ul class="nav-links">
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="index.html">Search Movies</a></li>
+            <li><a href="trending.html">Trending Now</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="login.html">Log In</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-particles" id="hero-particles"></div>
+        <div class="hero-content">
+            <span class="hero-badge">🎬 Your Movie Companion</span>
+            <h1 class="hero-title">
+                Discover Movies<br>
+                <span class="hero-highlight">You'll Love</span>
+            </h1>
+            <p class="hero-subtitle">
+                Search any movie instantly, explore ratings, cast details, plot summaries, and trending picks — all in
+                one beautifully crafted experience.
+            </p>
+            <div class="hero-actions">
+                <a href="index.html" class="hero-btn hero-btn-primary" id="hero-cta">
+                    <span>Start Exploring</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+                <a href="trending.html" class="hero-btn hero-btn-secondary">See What's Trending</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-card-stack">
+                <div class="hero-float-card card-1">
+                    <div class="float-card-icon">🔍</div>
+                    <div class="float-card-text">
+                        <strong>Instant Search</strong>
+                        <span>Find any movie in seconds</span>
+                    </div>
+                </div>
+                <div class="hero-float-card card-2">
+                    <div class="float-card-icon">⭐</div>
+                    <div class="float-card-text">
+                        <strong>IMDb Ratings</strong>
+                        <span>Real-time scores & reviews</span>
+                    </div>
+                </div>
+                <div class="hero-float-card card-3">
+                    <div class="float-card-icon">🎭</div>
+                    <div class="float-card-text">
+                        <strong>Full Details</strong>
+                        <span>Cast, plot, genre & more</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <h2 class="features-title">Why MovieGuide?</h2>
+        <p class="features-subtitle">Everything you need to find your next favourite film.</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Accurate Results</h3>
+                <p>Powered by the OMDb API, delivering precise movie data from the world's largest movie database.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Lightning Fast</h3>
+                <p>Type a movie name, hit search, and get complete details in under a second — no sign-up required.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Works Everywhere</h3>
+                <p>Fully responsive design that looks great on your phone, tablet, or desktop.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <h2>Ready to Find Your Next Movie?</h2>
+        <p>Join thousands of movie lovers who use MovieGuide every day.</p>
+        <a href="index.html" class="hero-btn hero-btn-primary">Search Now →</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="home-footer">
+        <div class="footer-content">
+            <span class="footer-logo">MovieGuide</span>
+            <p>© 2026 MovieGuide. Built with ❤️ by Arshpreet & Pratishtha.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Floating particles animation
+        const particlesContainer = document.getElementById('hero-particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 8 + 's';
+            particle.style.animationDuration = (6 + Math.random() * 6) + 's';
+            particle.style.width = particle.style.height = (2 + Math.random() * 4) + 'px';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Intersection Observer for reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.feature-card, .cta-banner').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+
+</html>
