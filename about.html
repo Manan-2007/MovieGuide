@@ -8,53 +8,122 @@
     <link rel="stylesheet" href="style.css">
     <title>About Us - MovieGuide</title>
     <link rel="icon" href="./img/logo.ico">
-
 </head>
 
-<body>
+<body class="trending-body">
+
+    <!-- Background Particles -->
+    <div class="global-particles" id="global-particles"></div>
 
     <nav>
         <a href="home.html" class="logo">MovieGuide</a>
         <ul class="nav-links">
             <li><a href="home.html">Home</a></li>
             <li><a href="index.html">Search Movies</a></li>
-            <li><a href="trending.html">Trending Now</a></li>
+            <li><a href="trending.html">Discover</a></li>
             <li><a href="about.html" class="active">About Us</a></li>
             <li><a href="login.html">Log In</a></li>
         </ul>
     </nav>
 
-    <div class="page-container flow-container">
-        <h1 style="color: #ffb92a; text-align: center;">Meet Our Team</h1>
-        <p style="text-align: center; color: #a0a0a0; margin-bottom: 2rem;">We are passionate movie buffs bringing you
-            the best reviews.</p>
+    <!-- Hero -->
+    <section class="about-hero">
+        <span class="trending-badge">✨ Our Story</span>
+        <h1 class="trending-heading">The Team Behind <span class="hero-highlight">MovieGuide</span></h1>
+        <p class="trending-sub">Built with love by two passionate developers who believe everyone deserves a beautiful movie discovery experience.</p>
+    </section>
 
+    <!-- Mission Section -->
+    <section class="about-mission">
+        <div class="mission-grid">
+            <div class="mission-card">
+                <div class="mission-icon">🎯</div>
+                <h3>Our Mission</h3>
+                <p>To make movie discovery effortless and delightful. We believe finding your next favourite film should be as enjoyable as watching it.</p>
+            </div>
+            <div class="mission-card">
+                <div class="mission-icon">⚡</div>
+                <h3>Built with</h3>
+                <p>Pure HTML, CSS & JavaScript — no frameworks. Powered by the OMDb API for real-time movie data and IMDb ratings.</p>
+            </div>
+            <div class="mission-card">
+                <div class="mission-icon">💡</div>
+                <h3>Why We Built It</h3>
+                <p>As movie enthusiasts ourselves, we wanted a clean, fast tool to search movies without ads, clutter, or distractions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="about-team-section">
+        <h2 class="about-team-heading">Meet the Creators</h2>
         <div class="about-section">
             <div class="profile-card">
+                <div class="profile-card-glow"></div>
                 <div class="profile-pic">PB</div>
                 <h2 class="profile-name">Pratishtha Bhatia</h2>
                 <p class="profile-role">Lead Developer</p>
                 <p class="profile-bio">
                     Pratishtha loves coding and cinema. She built the core search engine of this app and enjoys watching
-                    thriller movies
-                    in her free time.
+                    thriller movies in her free time.
                 </p>
+                <div class="profile-tags">
+                    <span class="profile-tag">JavaScript</span>
+                    <span class="profile-tag">API Integration</span>
+                    <span class="profile-tag">Problem Solver</span>
+                </div>
+                <div class="profile-fav">
+                    <span class="profile-fav-label">Favourite genre:</span>
+                    <span class="profile-fav-value">🎬 Thriller</span>
+                </div>
             </div>
 
             <div class="profile-card">
+                <div class="profile-card-glow"></div>
                 <div class="profile-pic">AK</div>
                 <h2 class="profile-name">Arshpreet Kaur</h2>
                 <p class="profile-role">UI/UX Designer</p>
                 <p class="profile-bio">
                     Arshpreet ensures our app looks stunning. She has a keen eye for color and typography, and her
-                    favorite
-                    genre is thriller and horror.
+                    favorite genre is thriller and horror.
                 </p>
+                <div class="profile-tags">
+                    <span class="profile-tag">UI/UX</span>
+                    <span class="profile-tag">CSS</span>
+                    <span class="profile-tag">Visual Design</span>
+                </div>
+                <div class="profile-fav">
+                    <span class="profile-fav-label">Favourite genre:</span>
+                    <span class="profile-fav-value">👻 Horror</span>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Stats Banner -->
+    <section class="about-stats">
+        <div class="stat-item">
+            <span class="stat-number">2</span>
+            <span class="stat-label">Team Members</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Movies to Discover</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Ads or Trackers</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-number">❤️</span>
+            <span class="stat-label">Built with Love</span>
+        </div>
+    </section>
 
+    <script src="auth.js"></script>
 
 </body>
 

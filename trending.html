@@ -6,73 +6,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Trending Now - MovieGuide</title>
+    <title>Discover - MovieGuide</title>
     <link rel="icon" href="./img/logo.ico">
-
 </head>
 
-<body>
+<body class="trending-body">
+
+    <!-- Background Particles -->
+    <div class="global-particles" id="global-particles"></div>
 
     <nav>
         <a href="home.html" class="logo">MovieGuide</a>
         <ul class="nav-links">
             <li><a href="home.html">Home</a></li>
             <li><a href="index.html">Search Movies</a></li>
-            <li><a href="trending.html" class="active">Trending Now</a></li>
+            <li><a href="trending.html" class="active">Discover</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="login.html">Log In</a></li>
         </ul>
     </nav>
 
-    <div class="page-container flow-container">
-        <h1 style="color: #ffb92a; text-align: center; margin-bottom: 1rem;">Editor's Picks</h1>
-        <div class="trending-grid">
-            <div class="movie-card">
-                <img src="f1.jpg" alt="Titanic" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">F1</h3>
-                    <div class="movie-meta">
-                        <span>2025</span>
-                        <span>⭐ 7.6</span>
-                    </div>
-                </div>
+    <section class="trending-hero">
+        <span class="trending-badge">🔍 Browse & Filter</span>
+        <h1 class="trending-heading">Discover Movies</h1>
+        <p class="trending-sub">Search by title and year to browse movies from the OMDb database. Results show only movies with poster images.</p>
+    </section>
+
+    <section class="explorer-section">
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+
+            <div class="filter-group">
+                <label class="filter-label">Movie Title</label>
+                <input type="text" id="exp-query" class="filter-input"
+                    placeholder="e.g. Avengers, Batman, Inception...">
             </div>
 
-            <div class="movie-card">
-                <img src="marty.jpg" alt="Marty Supreme" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">Marty Supreme</h3>
-                    <div class="movie-meta">
-                        <span>2025</span>
-                        <span>⭐ 8.0</span>
-                    </div>
-                </div>
+            <div class="filter-group">
+                <label class="filter-label">Year</label>
+                <input type="number" id="exp-year" class="filter-input"
+                    placeholder="e.g. 2023" min="1900" max="2026">
             </div>
 
-            <div class="movie-card">
-                <img src="inception.jpg" alt="Inception" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">Inception</h3>
-                    <div class="movie-meta">
-                        <span>2010</span>
-                        <span>⭐ 8.8</span>
-                    </div>
-                </div>
+            <div class="filter-group filter-group-btn">
+                <button id="exp-search-btn" class="exp-btn">
+                    🔍 Search
+                </button>
+                <button id="exp-clear-btn" class="exp-btn exp-btn-ghost">
+                    ✕ Clear
+                </button>
             </div>
-            <div class="movie-card">
-                <img src="sinners.jpg" alt="Sinners" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">Sinners</h3>
-                    <div class="movie-meta">
-                        <span>2025</span>
-                        <span>⭐ 7.5</span>
-                    </div>
+
+        </div>
+
+        <!-- Info Note -->
+        <div class="explorer-note">
+            <span>💡</span> Tip: Search by exact movie name for best results (e.g. "Avengers Endgame" instead of "Marvel").
+        </div>
+
+        <!-- Results Count -->
+        <div class="explorer-meta" id="explorer-meta"></div>
+
+        <!-- Results Grid -->
+        <div class="explorer-grid" id="explorer-grid">
+            <!-- Default state shown on load -->
+            <div class="explorer-empty" id="explorer-empty">
+                <div class="explorer-empty-icon">🎥</div>
+                <h3>Start discovering</h3>
+                <p>Type a movie title above and hit Search to browse the OMDb database.</p>
+                <div class="exp-suggestion-chips">
+                    <span onclick="quickExplore('Avengers')">Avengers</span>
+                    <span onclick="quickExplore('The Dark Knight')">Dark Knight</span>
+                    <span onclick="quickExplore('Interstellar')">Interstellar</span>
+                    <span onclick="quickExplore('Spider Man')">Spider-Man</span>
+                    <span onclick="quickExplore('Harry Potter')">Harry Potter</span>
+                    <span onclick="quickExplore('John Wick')">John Wick</span>
                 </div>
             </div>
         </div>
-    </div>
 
+        <!-- Pagination -->
+        <div class="explorer-pagination" id="explorer-pagination"></div>
 
+    </section>
+
+    <script src="key.js"></script>
+    <script src="auth.js"></script>
+    <script src="trending.js"></script>
 
 </body>
 

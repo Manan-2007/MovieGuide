@@ -120,4 +120,10 @@ Profile cards for the team members — name, role, and a short bio.
 
 ---
 
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
 <p align="center">Made with ❤️ and lots of 🍿 by the MovieGuide team</p>
