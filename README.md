@@ -11,7 +11,7 @@
 
 ## 📖 About the Project
 
-**MovieGuide** is a responsive, multi-page web application that gives users instant access to movie information, ratings, and curated picks — all wrapped in a sleek dark-themed UI. Built with pure HTML, CSS, and Vanilla JavaScript, it demonstrates practical frontend skills through real API integration, DOM manipulation, and seamless multi-page navigation.
+**MovieGuide** is a responsive, multi-page web application that gives users instant access to movie information, ratings, and curated picks — all wrapped in a sleek dark-themed UI. Built with pure HTML, CSS, and Vanilla JavaScript, it demonstrates practical frontend skills through real API integration, DOM manipulation, authentication flows, and seamless multi-page navigation.
 
 Whether you're looking up a classic or checking out what's trending, MovieGuide brings the data to your fingertips.
 
@@ -21,11 +21,12 @@ Whether you're looking up a classic or checking out what's trending, MovieGuide 
 
 | Feature | Description |
 |---|---|
-| 🔍 **Real-Time Search** | Search any movie and instantly get its poster, plot, cast, IMDb rating, and more via the OMDb API |
-| 📈 **Trending Now** | A curated "Editor's Picks" page showcasing handpicked movies in a responsive card grid |
-| 🔐 **Auth Flow** | Functional Login & Sign Up pages with form validation and JS-based redirection |
+| 🏠 **Landing Page** | Beautiful hero section with dynamic particle animations explaining the app's features |
+| 🔍 **Real-Time Search** | Search any movie and instantly get its poster, plot, cast, IMDb rating, and more via the OMDb API (movie-only results) |
+| 📈 **Discover (Trending)** | A curated "Editor's Picks" page showcasing handpicked movies in a responsive card grid |
+| 🔐 **Advanced Auth System** | Functional Login, Sign Up, and Password Reset pages. Includes route guards and redirect-after-login features |
 | 📱 **Responsive Design** | Fully mobile-friendly layout using CSS Grid and Flexbox |
-| 🎨 **Dark Theme UI** | Consistent, cinematic dark aesthetic with gold accents (`#1c1917` + `#ffb92a`) |
+| 🎨 **Dark Theme UI** | Consistent, cinematic dark aesthetic with gold accents (`#1c1917` + `#ffb92a`) and global particle effects |
 | 👥 **About Page** | Team profile section with role descriptions and bios |
 
 ---
@@ -35,14 +36,18 @@ Whether you're looking up a classic or checking out what's trending, MovieGuide 
 ```
 MovieGuide/
 │
-├── index.html          # Home page — movie search
-├── trending.html       # Trending / Editor's Picks page
+├── home.html           # Landing page / Hero section
+├── index.html          # Core Search page
+├── trending.html       # Discover / Editor's Picks page
 ├── about.html          # Meet the team
 ├── login.html          # Login page
 ├── signup.html         # Sign Up page
+├── forgot_password.html# Password reset flow
 │
-├── style.css           # Global stylesheet (dark theme, responsive)
-├── index.js            # Core JavaScript — API calls, DOM updates, auth logic
+├── style.css           # Global stylesheet (dark theme, animations, responsive)
+├── index.js            # Core JavaScript — API calls, DOM updates
+├── auth.js             # Authentication system, route guards, UI state
+├── trending.js         # JavaScript logic for Trending/Discover page
 ├── key.js              # OMDb API key
 │
 └── img/
@@ -67,8 +72,8 @@ No frameworks or package managers needed. Just a browser and an internet connect
 
 2. **Open in browser**
    ```bash
-   # Simply open index.html in your browser
-   open index.html
+   # Start by opening the landing page in your browser
+   open home.html
    ```
    Or use the **Live Server** extension in VS Code for the best experience.
 
@@ -84,28 +89,31 @@ No frameworks or package managers needed. Just a browser and an internet connect
 
 ## 🖥️ Pages Overview
 
-### 🏠 Search (Home)
-The core of the app. Type any movie name and hit **Search** — the app fetches live data from the OMDb API and renders the poster, rating, genre tags, plot summary, and cast.
+### 🏠 Landing (Home)
+The beautiful entry point of the app featuring CSS-based particle animations, highlighting features, and guiding users to search or discover.
 
-### 📈 Trending Now
-A static editorial page featuring hand-picked movies displayed in a responsive CSS Grid card layout. Each card shows a poster, year, and IMDb rating.
+### 🔍 Search (Index)
+*Requires login.* Type any movie name and hit **Search** — the app fetches live data from the OMDb API and renders the poster, rating, genre tags, plot summary, and cast.
 
-### 🔐 Login & Sign Up
-Simulated authentication pages with:
-- Input validation (empty field checks)
-- `Enter` key support
-- Redirect to Home on success
+### 📈 Discover (Trending)
+*Requires login.* A curated editorial page featuring hand-picked movies displayed in a responsive CSS Grid card layout. Each card shows a poster, year, and IMDb rating.
+
+### 🔐 Authentication Flow
+- **Login / Sign Up:** Simulated user accounts using `localStorage`
+- **Forgot Password:** Four-step simulated OTP password reset flow
+- **Route Guarding:** Protected pages automatically redirect unauthorized users to the login page
+- **Nav Pill:** Persistent user profile indicator in the navigation bar
 
 ### 👥 About Us
-Profile cards for the team members — name, role, and a short bio.
+*Requires login.* Profile cards for the team members — name, role, and a short bio.
 
 ---
 
 ## 🛠️ Tech Stack
 
 - **HTML5** — Semantic page structure
-- **CSS3** — Grid, Flexbox, transitions, responsive media queries
-- **JavaScript (ES6+)** — Fetch API, DOM manipulation, event handling
+- **CSS3** — Grid, Flexbox, custom animations (particles), responsive media queries
+- **JavaScript (ES6+)** — Fetch API, DOM manipulation, event handling, LocalStorage
 - **OMDb API** — Live movie data source
 - **Google Fonts (Poppins)** — Typography
 
